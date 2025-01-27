@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #1c2b35;
+    }
+
+    .container {
+      width: 800px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .skills-section {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .skills-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skills-group h3 {
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    .skills-icons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      align-items: center;
+    }
+
+    .skills-icons img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .skills-icons p {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Skill.html">Skill</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+    <div class="skills-section">
+      <div class="skills-group">
+        <h3>Using Now:</h3>
+        <div class="skills-icons">
+          <div>
+            <img src="https://logos-download.com/wp-content/uploads/2017/07/HTML5_badge.png" alt="HTML5">
+            <p>HTML5</p>
+          </div>
+          <div>
+            <img src="https://www.liblogo.com/img-logo/cs439cdf1-css3-logo-css3-original-logo-free-icon-of-devicon.png" alt="CSS3">
+            <p>CSS3</p>
+          </div>
+          <div>
+            <img src="https://www.clipartmax.com/png/middle/150-1504620_javascript-logo.png" alt="JavaScript">
+            <p>JavaScript</p>
+          </div>
+          <div>
+            <img src="https://logowik.com/content/uploads/images/321_c.jpg" alt="C++">
+            <p>C++</p>
+          </div>
+          <div>
+            <img src="https://www.liblogo.com/img-logo/re269re79-react-logo-react-logo-.png" alt="React">
+            <p>React</p>
+          </div>
+          <div>
+            <img src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_git-512.png" alt="Git">
+            <p>Git</p>
+          </div>
+          <div>
+            <img src="https://www.liblogo.com/img-logo/fi441fc32-figma-logo-figma-tips-and-tricks-rusmir-arnautovic-creative-designer-ux-ui.png" alt="Figma">
+            <p>Figma</p>
+          </div>
+          <div>
+            <img src="https://www.pngitem.com/pimgs/m/31-312155_c-programming-language-logo-hd-png-download.png" alt="C">
+            <p>C</p>
+          </div>
+        </div>
+      </div>
+      <div class="skills-group">
+        <h3>Learning:</h3>
+        <div class="skills-icons">
+          <div>
+            <img src="https://www.liblogo.com/img-logo/no6273n057-node-js-logo-nodejs-transparent-logo-google-search.png" alt="NodeJS">
+            <p>NodeJS</p>
+          </div>
+          <div>
+            <img src="https://www.vhv.rs/dpng/d/543-5438423_mysql-logo-hd-png-download.png" alt="MySQL">
+            <p>MySQL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
