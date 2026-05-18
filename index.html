@@ -1,112 +1,708 @@
+# Professional 4-Page Portfolio Upgrade
+
+## index.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      display: flex;
-      height: 100vh;
-    }
-    .left-section {
-      background-color: #1a2b44;
-      width: 50%;
-    }
-    .right-section {
-      background-color: #f47522;
-      width: 50%;
-    }
-    .content {
-      position: absolute;
-      width: 70%;
-      background-color: #ffffff;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 15px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 30px;
-      text-align: center;
-      height: 80%;
-    }
-    .navigation {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 20px;
-    }
-    .navigation a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: black;
-    }
-    .navigation a.active,
-    .navigation a:hover {
-      color: orange;
-    }
-    .profile-picture {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 5px solid orange;
-      margin: 0 auto;
-    }
-    .name {
-        margin-top: 10%;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .name span {
-      color: orange;
-    }
-    .designation {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: orange;
-      margin-top: 5px;
-    }
-    .description {
-        
-      background-color: #d4d3fc;
-      padding: 15px;
-      border-radius: 10px;
-      color: #333;
-      margin-top: 15%;
-      font-size: 1rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sethuragavan | Full Stack Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#020617,#0f172a,#111827);
+color:white;
+overflow:hidden;
+}
+
+body::before{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:#38bdf8;
+filter:blur(150px);
+opacity:0.25;
+top:-100px;
+left:-100px;
+}
+
+body::after{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:#8b5cf6;
+filter:blur(150px);
+opacity:0.2;
+bottom:-100px;
+right:-100px;
+}
+
+.navbar{
+position:fixed;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:100;
+background:rgba(15,23,42,0.4);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#38bdf8;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+margin-left:30px;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+color:#38bdf8;
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8%;
+gap:70px;
+position:relative;
+}
+
+.hero-text{
+flex:1;
+z-index:2;
+}
+
+.hero-text h3{
+font-size:24px;
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.hero-text h1{
+font-size:68px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero-text h1 span{
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+color:#cbd5e1;
+max-width:650px;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.primary{
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+color:white;
+}
+
+.primary:hover{
+transform:translateY(-4px);
+}
+
+.secondary{
+border:2px solid #38bdf8;
+color:#38bdf8;
+}
+
+.secondary:hover{
+background:#38bdf8;
+color:#0f172a;
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+position:relative;
+z-index:2;
+}
+
+.hero-image img{
+width:360px;
+height:360px;
+border-radius:50%;
+object-fit:cover;
+border:8px solid rgba(255,255,255,0.1);
+box-shadow:0 0 60px rgba(56,189,248,0.5);
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+}
+
+.socials{
+margin-top:30px;
+display:flex;
+gap:20px;
+}
+
+.socials a{
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#1e293b;
+color:#38bdf8;
+text-decoration:none;
+font-size:20px;
+transition:0.3s;
+}
+
+.socials a:hover{
+transform:translateY(-5px);
+background:#38bdf8;
+color:white;
+}
+
+@media(max-width:900px){
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:48px;
+}
+
+.buttons,
+.socials{
+justify-content:center;
+}
+
+.nav-links{
+display:none;
+}
+}
+
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="left-section"></div>
-    <div class="right-section"></div>
 
-    <div class="content">
-      <!-- Navigation -->
-      <div class="navigation">
-        <a href="index.html" class="active">Home</a>
-        <a href="About.html">About</a>
-        <a href="Skill.html">Skill</a>
-        <a href="Contact.html">Contact</a>
-      </div>
+<nav class="navbar">
+<div class="logo">Sethuragavan</div>
 
-      <!-- Profile Picture -->
-      <img src="C:\Users\sethu\Videos\sethu.jpg" alt="Profile Picture" class="profile-picture">
+<div class="nav-links">
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="skill.html">Skills</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 
-      <!-- Name and Designation -->
-      <h1 class="name">Hi I am <span>Sethuragavan K K</span></h1>
-      <p class="designation">Full Stack Developer</p>
+<section class="hero">
 
-      <!-- Description -->
-      <div class="description">
-        Welcome to my portfolio, where creativity meets functionality. Here, every design is crafted to bring simplicity and joy to the user experience. Explore my work, and let’s create something extraordinary together!
-      </div>
-    </div>
-  </div>
+<div class="hero-text">
+<h3>Full Stack Java Developer</h3>
+
+<h1>
+Hi, I'm <span>Sethuragavan K K</span>
+</h1>
+
+<p>
+Aspiring Full Stack Java Developer passionate about building scalable web applications, responsive user interfaces, and modern backend systems using Java, Spring Boot, React, and MySQL.
+</p>
+
+<div class="buttons">
+<a href="about.html" class="btn primary">Explore More</a>
+<a href="contact.html" class="btn secondary">Contact Me</a>
+</div>
+
+<div class="socials">
+<a href="https://github.com/sethuragavankk" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/sethu-ragavan-k-k-52a876330/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:sethuragavan9842@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+</div>
+
+<div class="hero-image">
+<img src="images/sethu.jpg" alt="Profile Image">
+</div>
+
+</section>
+
 </body>
 </html>
+```
+
+---
+
+## about.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+.navbar{
+padding:30px 8%;
+text-align:right;
+background:#0f172a;
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:500;
+}
+
+.navbar a.active,
+.navbar a:hover{
+color:#38bdf8;
+}
+
+.container{
+padding:80px 8%;
+}
+
+.title{
+font-size:50px;
+margin-bottom:30px;
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.about-card{
+background:#111827;
+padding:50px;
+border-radius:25px;
+box-shadow:0 0 30px rgba(0,0,0,0.4);
+line-height:2;
+font-size:18px;
+color:#cbd5e1;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.stat-box{
+background:#1e293b;
+padding:30px;
+text-align:center;
+border-radius:18px;
+}
+
+.stat-box h2{
+color:#38bdf8;
+font-size:36px;
+margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About</a>
+<a href="skill.html">Skills</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="container">
+
+<h1 class="title">About Me</h1>
+
+<div class="about-card">
+I am currently pursuing B.Tech Information Technology at Sri Krishna College of Technology with strong interest in Full Stack Web Development.
+
+<br><br>
+I enjoy creating modern responsive applications and backend systems using Java, Spring Boot, React, and MySQL. I continuously improve my problem-solving skills and explore new technologies to build impactful software solutions.
+
+<br><br>
+My goal is to become a professional Full Stack Java Developer and contribute to innovative real-world projects.
+</div>
+
+<div class="stats">
+<div class="stat-box">
+<h2>7.65</h2>
+<p>Current CGPA</p>
+</div>
+
+<div class="stat-box">
+<h2>2027</h2>
+<p>Expected Graduation</p>
+</div>
+
+<div class="stat-box">
+<h2>2+</h2>
+<p>Projects Built</p>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
+```
+
+---
+
+## skill.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+.navbar{
+padding:30px 8%;
+text-align:right;
+background:#0f172a;
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:500;
+}
+
+.navbar a.active,
+.navbar a:hover{
+color:#38bdf8;
+}
+
+.container{
+padding:80px 8%;
+}
+
+.title{
+font-size:50px;
+margin-bottom:50px;
+text-align:center;
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.skill-card{
+background:#111827;
+padding:35px;
+border-radius:20px;
+transition:0.3s;
+text-align:center;
+}
+
+.skill-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(56,189,248,0.3);
+}
+
+.skill-card h2{
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.skill-card p{
+line-height:1.9;
+color:#cbd5e1;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="skill.html" class="active">Skills</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="container">
+
+<h1 class="title">Technical Skills</h1>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h2>Frontend</h2>
+<p>
+HTML<br>
+CSS<br>
+JavaScript<br>
+React
+</p>
+</div>
+
+<div class="skill-card">
+<h2>Backend</h2>
+<p>
+Java<br>
+Spring Boot<br>
+REST APIs
+</p>
+</div>
+
+<div class="skill-card">
+<h2>Database</h2>
+<p>
+MySQL
+</p>
+</div>
+
+<div class="skill-card">
+<h2>Tools</h2>
+<p>
+Git<br>
+GitHub<br>
+Docker<br>
+AWS Basics
+</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+```
+
+---
+
+## contact.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+}
+
+.navbar{
+padding:30px 8%;
+text-align:right;
+background:#0f172a;
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:500;
+}
+
+.navbar a.active,
+.navbar a:hover{
+color:#38bdf8;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:85vh;
+padding:40px;
+}
+
+.contact-card{
+background:#111827;
+padding:60px;
+border-radius:25px;
+width:100%;
+max-width:900px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,0.5);
+}
+
+.contact-card h1{
+font-size:50px;
+margin-bottom:40px;
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.contact-item{
+margin-bottom:30px;
+font-size:22px;
+color:#cbd5e1;
+}
+
+.contact-item i{
+margin-right:15px;
+color:#38bdf8;
+font-size:28px;
+}
+
+.contact-item a{
+color:#cbd5e1;
+text-decoration:none;
+}
+
+.contact-item a:hover{
+color:#38bdf8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="skill.html">Skills</a>
+<a href="contact.html" class="active">Contact</a>
+</div>
+
+<div class="container">
+
+<div class="contact-card">
+
+<h1>Contact Me</h1>
+
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<a href="mailto:sethuragavan9842@gmail.com">
+sethuragavan9842@gmail.com
+</a>
+</div>
+
+<div class="contact-item">
+<i class="fab fa-github"></i>
+<a href="https://github.com/sethuragavankk" target="_blank">
+github.com/sethuragavankk
+</a>
+</div>
+
+<div class="contact-item">
+<i class="fab fa-linkedin"></i>
+<a href="https://www.linkedin.com/in/sethu-ragavan-k-k-52a876330/" target="_blank">
+linkedin.com/in/sethu-ragavan-k-k-52a876330
+</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+```
