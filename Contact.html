@@ -1,106 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Page</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1a202c;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      width: 90%;
-      max-width: 600px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .container h1 {
-      text-align: center;
-      color: #ff6f00;
-    }
-    .container p {
-      text-align: center;
-      color: #666;
-      margin-bottom: 20px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    input, textarea, button {
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #ff6f00;
-      box-shadow: 0 0 5px rgba(255, 111, 0, 0.5);
-    }
-    textarea {
-      resize: none;
-    }
-    button {
-      background-color: #ff6f00;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background-color: #e65c00;
-    }
-    .nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #ff6f00;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    .nav a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Sethuragavan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #020617, #0f172a, #111827);
+            color: white;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #cbd5e1;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #38bdf8;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 120px 4% 40px 4%;
+        }
+        .contact-card {
+            background: rgba(17, 24, 39, 0.7);
+            padding: 50px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 750px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        .contact-card h1 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .contact-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: #1e293b;
+            padding: 20px 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            transition: transform 0.3s ease;
+        }
+        .contact-item:hover {
+            transform: scale(1.02);
+        }
+        .contact-item i {
+            color: #38bdf8;
+            font-size: 24px;
+            width: 50px;
+            text-align: left;
+        }
+        .contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            word-break: break-all;
+            text-align: left;
+            transition: 0.2s;
+        }
+        .contact-item a:hover {
+            color: #38bdf8;
+        }
+        @media (max-width: 480px) {
+            .contact-card { padding: 30px 20px; }
+            .contact-card h1 { font-size: 32px; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Skill.html">Skill</a>
-      <a href="Contact.html">Contact</a>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Sethuragavan</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skill.html">Skills</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="contact-card">
+            <h1>Contact Me</h1>
+            <div class="contact-wrapper">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:sethuragavan9842@gmail.com">sethuragavan9842@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/sethuragavankk" target="_blank">github.com/sethuragavankk</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/sethu-ragavan-k-k-52a876330/" target="_blank">linkedin.com/in/sethu-ragavan-kk</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <h1>Contact Us</h1>
-    <p>Please fill out the form below to get in touch with us!</p>
-    <form>
-      <label for="name">Your Name*</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-      <label for="email">Your Email*</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-
-      <label for="message">Your Message*</label>
-      <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </body>
 </html>
